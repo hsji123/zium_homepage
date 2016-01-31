@@ -1,0 +1,554 @@
+<!doctype html>
+<?php
+
+	//require "_side_left.php";
+?>
+
+<html>
+ <head>
+ <meta charset = 'utf-8'>
+ 
+   <link rel="stylesheet" type="text/css" href="css/style.css" />
+   
+ <!--  <link rel="stylesheet" href="css/jquery-ui.css"> -->
+  <style>
+    #mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: #000000;
+  display: none;
+}
+
+.layerpop {
+  display: none;
+  z-index: 1000;
+  border: 2px solid #ccc;
+  background: #fff;
+  cursor: move;
+}
+
+.layerpop_area .title {
+  padding: 10px 10px 10px 10px;
+  border: 0px solid #aaaaaa;
+  background: #f1f1f1;
+  color: #3eb0ce;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.layerpop_area .layerpop_close {
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent url('btn_exit_off.png') no-repeat;
+}
+
+.layerpop_area .layerpop_close:hover {
+  background: transparent url('btn_exit_on.png') no-repeat;
+  cursor: pointer;
+}
+
+.layerpop_area .content {
+  width: 96%; 
+  margin: 2%;
+  color: #828282;
+}
+  </style>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+    // tab jquery
+  	var first = $.noConflict();
+  first(function() {
+    first( "#tabs" ).tabs(),
+    first("#tabs-tab-1").tabs(),
+    first("#tabs-tab-2").tabs(),
+    first("#tabs-tab-3").tabs(),
+    first("#tabs-tab-4").tabs()
+  })
+  </script>
+  <script src="raty-master/demo/javascripts/jquery.js"></script>
+  <script src="raty-master/lib/jquery.raty.js"></script>
+  <script src="raty-master/demo/javascripts/labs.js" type="text/javascript"></script>
+  <script>
+   // star rating jquery
+   var second = $.noConflict();
+  </script>
+
+  <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+  <script>
+    var menu_name_list = new Array();
+    var ax = $.noConflict();
+    ax.ajax({ // 메뉴 리스트 가져오기
+      type : "get",
+      crossDomain : true,
+      dataType : 'json',
+      url : "http://54.68.202.182:3000/store/2/category",
+
+      success : function(data){
+        
+        // 메뉴 리스트 결과 console.log(data);
+        var category_tb = '<table id="menu_list_table" ><tr >';
+        var temp_category = '';
+        ax.each(data,function(index,obj){
+          if(temp_category == obj.category){
+            category_tb += '<td id="menu_name">' + obj.menu_name + '</td>';
+            menu_name_list.push(obj.menu_name);
+          }
+          else{
+            if(index>0)
+            category_tb += '</tr>';
+            temp_category = obj.category;
+            category_tb += '<td id="menu_category">' + temp_category + '</td>';      
+            category_tb += '<td id="menu_name">' + obj.menu_name + '</td>';
+            menu_name_list.push(obj.menu_name);         
+          }
+        })
+	var now_date = new Date();
+	now_date = now_date.getFullYear() + "." + (now_date.getMonth()+1) + "." + now_date.getDate();
+        category_tb += '</tr></table><br>';
+        category_tb += '<a id="menu_right_button">' + now_date + '<input type = button value = 메일 쓰기  id="buttons" onclick = goDetail();>';
+        category_tb += '<input type = button  value = 스크랩 하기  id="buttons" onclick = goDetail();>';
+        category_tb += '<input type = button id="search_btn" value="＠"><input type = text id="inputs" onclick = goDetail();></a><br>';
+        ax('#tabs-tab-1-1').append(category_tb);
+        console.log("메뉴 확인 : " + menu_name_list); // menu 리스트 확인
+
+      },
+      error : function(request,status,error){
+            console.log(error);
+              alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+      }
+    }); /////// **********/////////
+
+    ax.ajax({ // 메뉴 평가내용
+      type : "get",
+      crossDomain : true,
+      dataType : 'json',
+      url : "http://54.68.202.182:3000/store/2/menu",
+
+      success : function(data){
+        // 서버측과 메뉴에 따른 평가내용 console.log(data); 
+        
+        console.log(data);
+        
+        for(var i = 0 ; i < menu_name_list.length; i++){
+          var menu_count = "<div id ='menu_big_title' ><a id = 'big_name'>"; // 메뉴이름 + 갯수 String 초기화 
+          var eval_list = "<table>"; // 메뉴 평가 내용 초기화
+
+          menu_count +=  menu_name_list[i] + "</a>  |  ";
+          var count = 0; // 메뉴 총 개수
+          ax.each(data,function(idx,obj){
+            if(menu_name_list[i] == obj.menu_name){
+              var reg = change_regdate(obj.regdate); // 등록날짜 형식 변경
+              eval_list += "<tr><td><input type = radio name = test></td>";
+              eval_list += "<td>" + obj.point + "</td>";
+              eval_list += "<td>" + obj.comment + "</td>";
+              eval_list += "<td>" + obj.email_id + "</td>";
+              eval_list += "<td>" + reg + "</td>";
+              count++;
+            }
+          })
+	  eval_list += "</table><br>";
+          menu_count += " <a id=totlas>총 " + String(count) + " 건</a><br></div>";
+          ax('#tabs-tab-1-1').append(menu_count);
+          ax('#tabs-tab-1-1').append(eval_list);
+        }        
+      },
+      error : function(request,status,error){
+            console.log(error);
+              alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+      }
+    });
+
+
+  
+    ax.ajax({ // scrap list 가져오기
+      type : "get",
+      crossDomain : true,
+      url : "http://54.68.202.182:3000/store/1/scrap",
+      dataType : "json",
+
+      success : function(data){
+        //scrap list 결과 console.log(data);
+        ax.each(data,function(index,obj){
+
+          ax('.content').append(obj.scrap_name + "<br>");
+        })
+      },
+      error : function(request,status,error){
+        console.log(error);
+        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+      }
+    })
+
+    function change_regdate(prev_regdate){
+      
+      var result = "";
+      var list = prev_regdate.split("T");
+      var res1 = list[0].split("-");
+      result += String(res1[1]) + "/" + String(res1[2]) + " ";
+
+      var res2 = list[1].split(":");
+      result += String(res2[0]) + ":" + String(res2[1]);
+
+      return result;
+    }
+
+  </script>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script> 
+  <script>
+    // chart jquery
+    ax(document).ready(function () {
+        ax.ajax({
+          type : "get",
+          crossDomain:true,
+          dataType : 'json',
+          url : "http://54.68.202.182:3000/survey/1/howto",
+
+          success : function(data){
+            //console.log(data);
+            ax.each(data,function(index,obj){
+               // Build the chart
+            ax('#howto').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '유입경로'
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: ax(this).name,
+                colorByPoint: true,
+                data: [{
+                    name: '외관을 보고',
+                    y: 1
+                }, {
+                    name: '전단지 보고',
+                    y: 1
+                }, {
+                    name: '재방문',
+                    y: 1
+                }, {
+                    name: '지인추천',
+                    y: 1
+                }, {
+                    name: '블로그 검색',
+                    y: 1
+                }]
+            }]
+            });
+            
+             });
+          },
+          error : function(request,status,error){
+            console.log(error);
+            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+          }
+        });
+
+        ax.ajax({
+          type : "get",
+          crossDomain:true,
+          dataType : 'json',
+          url : "http://54.68.202.182:3000/survey/1/returnvisit",
+
+          success : function(data){
+            //console.log(data);
+            /*ax('#revisit').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: '유입경로'
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: ax(this).name,
+                colorByPoint: true,
+                data: [{
+                    name: '외관을 보고',
+                    y: 1
+                }, {
+                    name: '전단지 보고',
+                    y: 1
+                }, {
+                    name: '재방문',
+                    y: 1
+                }, {
+                    name: '지인추천',
+                    y: 1
+                }, {
+                    name: '블로그 검색',
+                    y: 1
+                }]
+            }]
+        });
+    });*/
+          }
+          ,
+          error : function(request,status,error){
+            console.log(error);
+              alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+          }
+        });
+       })
+
+        
+  </script>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> 
+<!--드래그 할수 있는 기능을 사용하기 위해서 draggable();-->
+
+<script>
+
+  function wrapWindowByMask() {
+    //화면의 높이와 너비를 구한다.
+    var maskHeight = $(document).height(); 
+    var maskWidth = $(window).width();
+
+    //문서영역의 크기 
+    console.log( "document 사이즈:"+ $(document).width() + "*" + $(document).height()); 
+    //브라우저에서 문서가 보여지는 영역의 크기
+    console.log( "window 사이즈:"+ $(window).width() + "*" + $(window).height());    
+
+    //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+    $('#mask').css({
+      'width' : maskWidth,
+      'height' : maskHeight
+    });
+
+    //애니메이션 효과
+    //$('#mask').fadeIn(1000);      
+    $('#mask').fadeTo("slow", 0);
+  }
+
+  function popupOpen() {
+    $('.layerpop').css("position", "absolute");
+    //영역 가운에데 레이어를 뛰우기 위해 위치 계산 
+    $('.layerpop').css("top",(($(window).height() - $('.layerpop').outerHeight()) / 2) + $(window).scrollTop());
+    $('.layerpop').css("left",(($(window).width() - $('.layerpop').outerWidth()) / 2) + $(window).scrollLeft());
+    $('#layerbox').show();
+  }
+
+  function popupClose() {
+    $('#layerbox').hide();
+    $('#mask').hide();
+  }
+
+  function goDetail() {
+
+    /*팝업 오픈전 별도의 작업이 있을경우 구현*/ 
+
+    popupOpen(); //레이어 팝업창 오픈 
+    wrapWindowByMask(); //화면 마스크 효과 
+  }
+
+
+  function tabSelcet(){
+	    $('#tabs_bottom').css("background-colo","#DD551B");
+  }
+
+  
+</script>
+
+ </head>
+
+ <body>
+  <div id = "tabs">
+  	<ul id="tab_bars"> <!-- 상위 탭 -->
+  	 <li><div  id="menu_div_full"><div id="menu-name"><a href = "#tabs-1" >메뉴평가</a></div><div id="tabs_bottom"></div></div></li> 
+  	 <li><div  id="menu_div_full"><div id="menu-name"><a href = "#tabs-2">서비스평가</a></div><div id="tabs_bottom"></div></div></li>
+  	 <li><div  id="menu_div_full"><div id="menu-name"><a href = "#tabs-3">유입경로</a></div><div id="tabs_bottom"></div></div></li>
+  	 <li><div  id="menu_div_full"><div id="menu-name"><a href = "#tabs-4">재방문의사</a></div><div id="tabs_bottom"></div></div></li>
+ 
+  	</ul>
+  	
+  	
+  	
+
+   <div id = "tabs-1">  <!-- 상위 첫번째 탭 -->
+   	<div id = "tabs-tab-1"><!-- 하위 첫번째 탭 -->
+   		<ul id="tab_bars_1">
+   		 <li><a href = "#tabs-tab-1-1">일간</a></li>
+   		 <li><a href = "#tabs-tab-1-2">주간</a></li>
+   		 <li><a href = "#tabs-tab-1-3">전체</a></li>
+   		</ul>
+
+   		<div id = "tabs-tab-1-1">
+
+
+      <!-- 팝업뜰때 배경 -->
+      <div id="mask"></div>
+
+      <!--Popup Start -->
+      <div id="layerbox" class="layerpop">
+        <article class="layerpop_area" style="background: rgba(0,0,0,0);">
+          <!-- div title 사용하면 제목 추가가 됨 -->
+          <a href="javascript:popupClose();" class="layerpop_close"
+            id="layerbox_close"></a>
+
+          <!-- exit 아이콘 넣으면 팝업 종료 아이콘-->
+
+          <br>
+          <div class="content">
+            
+          </div>
+
+        </article>
+
+      </div>
+      <!--Popup End -->
+
+   		</div>
+   	</div>
+
+   </div>
+   <!-- 상위 첫번째 탭 끝 -->
+
+   <!-- 상위 두번째 탭 시작 -->
+   <div id = "tabs-2">
+   	<div id = "tabs-tab-2">
+   		<ul>
+   		 <li><a href = "#tabs-tab-2-1">일간</a></li>
+   		 <li><a href = "#tabs-tab-2-2">주간</a></li>
+   		 <li><a href = "#tabs-tab-2-3">전체</a></li>
+   		</ul>
+
+   		<div id = "tabs-tab-2-1">
+   			<br>
+   		<font size = "20">서비스 평가</font><input type ="button" value = "스크랩하기">
+   		<div id = "eval_list">
+   			<table>
+   			<tr>
+   			 <td>직원친절도</td><td><div id = "kindness"></div></td>
+   			</tr>
+   			<tr>
+   			 <td>위생</td><td><div id = "freshness"></div></td>
+   			</tr>
+   			</table>
+   			<!-- DB 값을 읽어오면 이놈들 반복-->
+   			<table border="1">
+   			 <tr>
+   			  <td><input type = "checkbox" name = "list"></td>
+   			  <td>평점</td>
+   			  <td>평가내용+작성자ID</td>
+   			  <td>작성 시간</td>
+   			 </tr>
+
+   			 <tr>
+   			  <td><input type = "checkbox" name = "list"></td>
+   			  <td>평점</td>
+   			  <td>평가내용+작성자ID</td>
+   			  <td>작성 시간</td>
+   			 </tr>
+
+   			 <tr>
+   			  <td><input type = "checkbox" name = "list"></td>
+   			  <td>평점</td>
+   			  <td>평가내용+작성자ID</td>
+   			  <td>작성 시간</td>
+   			 </tr>
+   			</table><!-- 반복 끝 -->
+   			</div>
+   		</div>
+   	</div>
+   </div> 
+   <!--- 상위 두번째 탭 끝 -->
+
+   <!-- 상위 세번째 탭 시작 -->
+   <div id = "tabs-3">
+   <div id = "tabs-tab-3">
+   		<ul>
+   		 <li><a href = "#tabs-tab-3-1">전체</a></li>
+   		 <li><a href = "#tabs-tab-3-2">주간</a></li>
+   		 <li><a href = "#tabs-tab-3-3">일간</a></li>
+   		</ul>
+
+   		<div id = "tabs-tab-3-1">
+   		 <div id = "howto">
+   		 </div>
+   		</div>
+   	</div>
+    </div>
+    <!-- 상위 세번째 탭 끝 -->
+
+   	<div id = "tabs-4">
+   	<div id = "tabs-tab-4">
+   		<ul>
+   		 <li><a href = "#tabs-tab-4-1">일간</a></li>
+   		 <li><a href = "#tabs-tab-4-2">주간</a></li>
+   		 <li><a href = "#tabs-tab-4-3">전체</a></li>
+   		</ul>
+
+      <div id = "tabs-tab-4-1">
+        <div id = "revisit">
+        </div>
+      </div>
+   	</div>
+   	</div>
+
+   	
+  </div>
+
+ </body>
+ <script>
+ second.fn.raty.defaults.path = 'raty-master/lib/images';
+ second('#kindness').raty({
+ 	readOnly:true,
+ 	half:true,
+ 	score:4.7,
+ 	width:400,
+ 	numberMax:5,
+ 	number:10
+ });
+ second('#freshness').raty({
+ 	readOnly:true,
+ 	half:true,
+ 	score:4.7,
+ 	width:400,
+ 	numberMax:5,
+ 	number:10
+ });
+ </script>
+</html>

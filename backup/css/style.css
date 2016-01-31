@@ -1,0 +1,811 @@
+﻿@CHARSET "UTF-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@font-face {
+	font-family: 'KR Black';
+	src: url('NotoSansCJKkr-Black.otf')
+}
+
+@font-face {
+	font-family: 'KR Bold';
+	src: url('NotoSansCJKkr-Bold.otf')
+}
+
+@font-face {
+	font-family: 'KR DemiLight';
+	src: url('NotoSansCJKkr-DemiLight.otf')
+}
+
+@font-face {
+	font-family: 'KR Light';
+	src: url('NotoSansCJKkr-Light.otf')
+}
+
+@font-face {
+	font-family: 'KR Medium';
+	src: url('NotoSansCJKkr-Medium.otf')
+}
+
+@font-face {
+	font-family: 'KR Regular';
+	src: url('NotoSansCJKkr-Regular.otf')
+}
+
+@font-face {
+	font-family: 'KR Thin';
+	src: url('NotoSansCJKkr-Thin.otf')
+}
+
+body {
+	font-family: 'Nanum Gothic';
+}
+
+body {
+	text-align: center;
+	font-family: "Nanum Gothic", "KR Medium";
+	margin: 0 auto;
+	padding: 0;
+}
+
+p1 {
+	font-weight: 600;
+	font-size: 30px;
+}
+
+p2 {
+	
+}
+
+#head_line {
+	width: 100%;
+	height: auto;
+	background-color: #FD7E13;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	padding : 15px 0 15px 0;
+}
+
+#coupon_img {
+	height: 250px;
+	width: 96%;
+}
+/* 荑좏룿 ?대?吏 css */
+#menu_tabs-1 {
+	display: none;
+}
+
+#menu_tabs-2 {
+	display: none;
+}
+
+#menu_tabs-3 {
+	display: none;
+	overflow-y: auto;
+} /* 荑좏룿 由ъ뒪??硫붾돱 ??*/
+/*?쇰컲 踰꾪듉 ?ㅼ젙*/
+#pass_button {
+	font-size: 9pt;
+	background-color: #B5B5B6;
+	margin: 2%;
+	padding: 3%;
+	border-radius: 5px;
+	border: 0;
+	width: 40%;
+}
+
+#pass_button:active {
+	background-color: #EA5514;
+	color: white;
+}
+
+ul#navi {
+	width: 100%;
+	margin: 10%;
+	padding: 0;
+	list-style: none;
+}
+
+li.group {
+	margin: 0;
+	padding-top: 20px;
+	float: left;
+}
+
+li.group div.title {
+	margin: 0;
+	padding: 0;
+	/*line-height: 35px;*/
+	color: #2C2C2C;
+	font-size: 18px;
+	font-family: 'KR Regular';
+}
+
+ul.sub li {
+	list-style: none;
+}
+
+ul.sub li a {
+	display: block;
+	margin-top: 18px;
+	margin-left: 12px;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: white;
+} /*                   */
+/* ************************** */
+div label input {
+	margin-right: 100px;
+}
+
+#check_radio_button {
+	width: 90%;
+	margin: 4px;
+	margin-left: 5%;
+	margin-bottom: 5%;
+	background-color: #B5B5B6;
+	border-radius: 4px;
+	border: 1px solid #D0D0D0;
+	overflow: auto;
+}
+
+#check_radio_button label {
+	width: 100%;
+}
+
+#check_radio_button label span {
+	text-align: center;
+	padding: 10px 0px;
+	display: block;
+}
+
+#check_radio_button label input {
+	position: absolute;
+	top: -20px;
+}
+
+#check_radio_button input:checked+span {
+	background-color: #EA5514;
+	color: #fff;
+} /* ?됯? ?좊븣 ?쇰뵒??踰꾪듉 CSS*/
+
+/*ProgressBar CSS*/
+#prog {
+	padding: 0px;
+	margin: 0px;
+	top: 0px;
+	width: 100%;
+	height: 20px;
+}
+
+#banner {
+	bottom: 0px;
+	position: absolute;
+	padding: 0px;
+	margin: 0 auto;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	z-index: 9999;
+}
+
+/* ?앹뾽 CSS*/
+#mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	background-color: #000000;
+	display: none;
+}
+
+.layerpop {
+	z-index: 999;
+	background: rgba(0, 0, 0, 0);
+	width: 95%;
+	height: 90%;
+	display: none;
+}
+
+.layerpop_area .title {
+	padding: 10px 10px 10px 10px;
+	border: 0px solid #aaaaaa;
+	background: #f1f1f1;
+	color: #3eb0ce;
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.layerpop_area .layerpop_close {
+	width: 40px;
+	height: 40px;
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 2.9%;
+	background-color: white;
+	background-position: center;
+	background-image: url('image/btn_exit_off.png');
+	background-color: white;
+	border-radius: 4px;
+	background-repeat: no-repeat;
+}
+
+.layerpop_area .layerpop_close:hover {
+	width: 40px;
+	height: 40px;
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 2.9%;
+	background-color: white;
+	background-position: center;
+	background-image: url('image/btn_exit_on.png');
+	background-color: white;
+	border-radius: 4px;
+	background-repeat: no-repeat;;
+	cursor: pointer;
+}
+
+.layerpop_area .content {
+	width: 96%;
+	margin: 3% 1%;
+	background: white;
+	padding-top: 10px;
+}
+
+.layerpop_area .content h1 {
+	font-size: 10dpt;
+	color: #EA5514;
+}
+
+.layerpop_area .content .content_email .mail_ul {
+	margin: 4% 0 4% 0;
+}
+
+.layerpop_area .content .content_email .content_box .mail_ul {
+	border-radius: 4px;
+	width: 40%;
+	height: 50px;
+}
+
+.mail_ul li {
+	padding: 10px;
+}
+/*?꾩떆*/
+#mask_email {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	background-color: #000000;
+	display: none;
+}
+
+.layerpop_email {
+	display: none;
+	z-index: 10000;
+	border: 5px solid #595757;
+	background: #fff;
+	width: 95%;
+	height: 80%;
+}
+
+.layerpop_area_email .title {
+	padding: 10px 10px 10px 10px;
+	border: 0px solid #aaaaaa;
+	background: #f1f1f1;
+	color: #3eb0ce;
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.layerpop_area_email .layerpop_close_email {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: transparent url('image/btn_exit_off.png') no-repeat;
+}
+
+.layerpop_area_email .layerpop_close_email:hover {
+	background: transparent url('image/btn_exit_on.png') no-repeat;
+	cursor: pointer;
+}
+
+.layerpop_area_email .content {
+	width: 96%;
+	margin: 2%;
+}
+
+.layerpop_area_email .content h1 {
+	font-size: 15pt;
+	text-align: left
+}
+
+.layerpop_area_email .content .content_email .mail_ul {
+	margin: 4% 0 4% 0;
+}
+
+.layerpop_area .content .content_email .content_box .mail_ul {
+	border-radius: 4px;
+	width: 40%;
+	height: 50px;
+}
+
+#hide_button {
+	visibility: hidden;
+}
+
+/* 硫붾돱 怨좊???CSS*/
+#menu_scroll {
+	width: 90%;
+	color: white;
+	background-color: #3A3E39;
+	overflow: hidden;
+}
+
+#menu_scroll td {
+	border-bottom: 1px inset #000;
+	height:40px;
+	padding-left: 5%;
+	padding-right: 5%;
+	
+}
+
+#menu_scroll tr:hover {
+	padding: 4%;
+	background-color: #FD7E13;
+}
+
+#menu_name{
+	float: left;
+}
+#menu_price{
+	float: right;
+}
+
+#service {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/*?됯??좊븣 CSS*/
+img.tab_icon {
+	width: 24px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.tab_menu_sel {
+	color: white;
+	background-color: #3A3E39;
+	margin: 0;
+}
+
+#tab_menu_eval {
+	color: white;
+	background-color: #565453;
+}
+
+#tab_menu_point {
+	
+}
+
+#tab_menu_comment {
+	text-align: left;
+	padding-left: 7%;
+}
+
+#tab_menu_comment_info {
+	width: 90%;
+	height: 60px;
+	overflow-y: scroll;
+	resize: none;
+	border-radius: 5px;
+	border: 4px solid #7F7F7F;
+}
+
+#top_line {
+	margin: 0;
+	height: 20px;
+	background-color: #EA5514;
+}
+
+#menu_benefit {
+	margin-left: 10%;
+	margin-top: 3%;
+	width: 80%;
+	background-color: white;
+	border: 5px solid #DDD9C3;
+}
+
+#menu_benefit:hover {
+	background-color: #EA5514;
+}
+
+#menu_benefit_contents {
+	width: 100%;
+	/*color: white;*/
+	font-size: 80%;
+	text-align: left;
+}
+
+#benefit_tab_img {
+	vertical-align: bottom;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	border-radius: 5px;
+}
+
+#benefit_tab_img_detail {
+	width: 95%;
+	height: 200px;
+	margin-bottom: 4%;
+}
+
+#benefit_tab_detail {
+	width: 100%;
+	height: auto;
+	padding: 25px 0px;
+	background-color: #EFEFEF;
+}
+
+/*留덉?留??섏씠吏*/
+#reward {
+	height: 2%;
+	width: 50%;
+	margin-top: 5%;
+	background-color: #EA5514;
+}
+
+#reward_comment {
+	color: #EA5514;
+}
+
+#reward_img {
+	height: 45%;
+	width: 80%;
+}
+
+#top_progress {
+	background-color: #EA5514;
+	color: white;
+	font-size: 16pt;
+	padding: 10px;
+}
+
+#top_progress_ex {
+	color: gray;
+	float: right;
+	padding-right: 5%;
+	margin: 1% 0 5% 0;
+}
+/* This button was generated using CSSButtonGenerator.com */
+.mail_ul {
+	text-align: left;
+	font-size: 10pt;
+}
+
+#email_id {
+	padding: 5px;
+	width: 40%;
+	margin: 1%;
+	border-radius: 5px;
+	height: 30px;
+	border: 3px solid #595757;
+	background-color: #F7F8F8;
+}
+
+#email_id:FOCUS {
+	padding: 5px;
+	border: 3px solid #EA5514;
+	box-shadow: 0;
+}
+
+#select_mail {
+	width: 40%;
+	margin: 1%;
+	height: 50px;
+	background-color: #595757;
+	color: white;
+	border-radius: 5px;
+}
+
+#e:FOCUS {
+	background-color: #EA5514;
+}
+
+#id_btn {
+	float: right;
+	margin-right: 3%;
+}
+
+#button {
+	border-radius: 5px;
+	background: #C5C5C6;
+}
+
+.category {
+	display: none;
+}
+
+#menu_category {
+	width: 90%;
+	border-spacing: 0;
+}
+
+#menu_category td {
+	background: #E1E0DF;
+	height: 30px;
+	text-align: center;
+}
+
+#menu_div_full {
+	width: 100%;
+	height: 100%;
+	line-height: 3;
+}
+
+#menu_div_top {
+	background-color: #b4b4b5;
+	height: 3px;
+	width: 100%;
+	position: static;
+	top: 0;
+	color: #3e3a39;
+}
+
+#menu-name {
+	font-size: 13pt;
+	font-weight: bold;
+	
+ <!--	padding-top: 7%; -->
+}
+
+#sub-title {
+	float: left;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#sub-title-con {
+	float: left;
+	font-size: 10pt;
+	margin: 20px 10px 10px 0px;
+}
+#sub-title-con a{
+	font-size : 15pt;
+	color : #EA5514;
+	font-weight : bold;
+}
+
+#menu_raty {
+	height: 50px;
+	width: 100%;
+	padding-top: 15px;
+	background-color: #3e3a39;
+	display: inline-table;
+}
+
+#star-txt {
+	font-size: 9pt;
+	padding: 5px 1px;
+}
+
+#menu-disc {
+	width: 100%;
+	height: 20px;
+	background-color: white;
+	border: 3px solid gray;
+	border-radius: 5px;
+	resize: none;
+	wrap: hard;
+}
+
+#menu-ul {
+	padding-left: 2px;
+}
+
+#menu_table {
+	padding: 10px;
+	width: 96%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	margin: auto;
+}
+
+#menu_table td {
+	padding: 0px 5px 5px 5px;
+}
+
+#menu_table input {
+	font-size: 10pt;
+	background-color: #B5B5B6;
+	margin: 2%;
+	padding: 3%;
+	border-radius: 5px;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#menu_div_tops {
+	background-color: #E1E0DF;
+	height: 30px;
+	width: 100%;
+	position: static;
+	top: 0;
+	color: #3e3a39;
+	padding-top: 5px;
+	text-align: left;
+}
+
+#ontop {
+	background-color: #B4B4B5;
+	height: 5px;
+	width: 100%;
+	position: static;
+	top: 0;
+	color: #3e3a39;
+}
+
+#kindness, #freshness {
+	background-color: #3E3A39;
+	padding-top: 20px;
+	height: 50px;
+}
+
+#star_table {
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	margin: auto;
+}
+
+#star_disc {
+	padding: 10px;
+	width: 95%;
+	height: 15px;
+	padding: 5px;
+	margin: auto;
+	background-color: #F7F6F5;
+	border: 4px solid #B4B4B5;
+	border-radius: 7px;
+	resize: none;
+	wrap: hard;
+}
+
+#star_button {
+	font-size: 12pt;
+	background-color: #B5B5B6;
+	margin: 2%;
+	padding: 3%;
+	border-radius: 5px;
+	border: 0;
+	width: 200px;
+	height: 50px;
+}
+#star_button:ACTIVE{
+	
+	background-color: #EA5514;
+}
+#email_list {
+	height: 45px;
+	margin: 1%;
+	border-radius: 5px;
+	border: 3px solid #595757;
+	background-color: #595757;
+	color: white;
+}
+
+#email_list:FOCUS {
+	background-color: #EA5514;
+}
+
+#titles {
+	font-size: 13pt;
+	font-weight: bold;
+	/*color: white;*/
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+#menu_select{
+	width: 100%; height: 300px; overflow: auto;
+}
+
+#menu_select option:HOVER {
+	background-color: #EA5514;
+}
+#menu_tabs-2 #top_title{
+	padding:10px;
+	padding-top:15px;
+	/*margin-left:10%;*/
+	text-align: left;
+}
+#top_title{
+	padding:10px;
+	text-align: left;
+}
+
+#mask_prov {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1001;
+	background-color: #000000;
+	display: none;
+}
+
+.layerpop_prov {
+	display: none;
+	z-index: 10000;
+	border: 5px solid #595757;
+	background: #fff;
+	width: 95%;
+	height: 80%;
+}
+
+.layerpop_area_prov .title {
+	padding: 10px 10px 10px 10px;
+	border: 0px solid #aaaaaa;
+	background: #f1f1f1;
+	color: #3eb0ce;
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.layerpop_area_prov .layerpop_close_prov {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: transparent url('image/btn_exit_off.png') no-repeat;
+}
+
+.layerpop_area_prov .layerpop_close_prov:hover {
+	background: transparent url('image/btn_exit_on.png') no-repeat;
+	cursor: pointer;
+}
+
+.layerpop_area_prov .content_prov {
+	width: 96%;
+	margin: 2%;
+}
+.layerpop_area_prov .content_prov textarea{
+	width: 96%;
+	height:300px;
+	border : 0px;
+	margin-top:15px;
+}
+
+.layerpop_area_prov .content h1 {
+	font-size: 15pt;
+	text-align: left
+}
+
+#dani {
+	width: 96%; 
+	height: 340px;
+}
+
+#howto_table{
+	width:100%;
+}
+#howto_table tr td {
+	width : 50%;
+}

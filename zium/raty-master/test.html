@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset = "utf-8">
+ <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+ <style>
+  #test{
+  	background-color : yellow;
+  }
+  #result{
+  	background-color: orange;
+  }
+  .clr{
+  	background-color : blue;
+  	color : white;
+  	font-size : 16pt;
+  }
+ </style>
+ <script>
+  $(function(){
+  	$('#test').click(function(){
+  		$.ajax({
+  			type : "get",
+  			url : "test_case.json", // 접속할 url 주소
+  									// 로컬에서는 json 파일을 만들어서 사용함
+  			dataType : 'json', //받을 데이터 형식
+
+  			success : function(data){
+  				var tb = "<table border='1'>";
+  				tb += "<tr><td>Name</td><td>Age</td></tr>";
+  				$.each(data,function(index,obj){
+  					console.log(obj.name + obj.age);
+  					tb += "<tr>";
+  					tb += "<td class = 'clr'>" + obj.name + "</td>";
+  					tb += "<td>" + obj.age + "</td>";
+  					tb += "</tr>"
+  				});
+  				tb += "</table>";
+  				$('#result').append(tb);
+  				console.log(tb);
+
+  				//$('td').each(function(){
+  				//	$(this).addClass('clr');
+  				//});
+  			},
+  			error:function(request,status,error){
+        		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        	}
+  		});
+  	});
+  });
+ </script>
+</head>
+
+<body>
+ <div id ="test">YELLOW</div>
+
+ <br><br>
+
+ <div id ="result">ORANGE
+ 
+ </div>
+ </body>
+</html>

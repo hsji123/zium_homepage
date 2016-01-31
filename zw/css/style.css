@@ -1,0 +1,213 @@
+@CHARSET "UTF-8";
+
+#side_left {
+	width: 250px;
+	background-color: #595858;
+	text-align: center;
+	height: 768px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	z-index: 100;
+	border-collapse: collapse;
+	border: 0 none;
+	color: white;
+}
+
+#side_left td {
+	height: 50px;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	border: hidden;
+}
+
+#side_left td:HOVER, td:ACTIVE {
+	background: #EA5514;
+}
+
+#side_left #title {
+	background: #EA5514;
+	color: white;
+}
+
+#side_left #login {
+	background: #EA5514;
+	color: black;
+}
+
+#side_left #login #log_out, #my_page {
+	width: 50%;
+}
+
+#tabs {
+	background: #E1E1DF;
+	padding: 0px; 
+	width: 100%;
+	border: 0px;
+	border-radius: 0px;
+	padding-top: 5px;
+}
+
+#tab_bars {
+	width: 100%;
+	list-style-type: none;
+	position: relative;
+	text-align: center;
+	height: 40px;
+	padding: 0px;
+	background: #C9CACA;
+}
+
+
+
+#tab_bars li {
+	position: relative;
+	height: 100%;
+	width: 25%;
+	float: left;
+	padding: 0px;
+}
+
+#menu_div_full {
+	width: 100%;
+	height: 100%;
+	line-height: 3;
+}
+#menu-name {
+	height: 100%;
+	color: red;
+}
+#menu-name a{
+	text-decoration: none;
+	color: #555555;
+	font-weight: bold;
+}
+#menu-name a:HOVER, a:ACTIVE{
+	color: #DD551B;
+}
+#tabs_bottom {
+	bottom: 0;
+	height: 10px;
+	background: #B5B4B5;
+	position: static;
+	height: 3px;
+	width: 100%;
+}
+
+#tab_bars_1{
+	width: 90%;
+	list-style-type: none;
+	text-align: center;
+	height: 40px;
+	padding: 0px;
+	margin:0;
+	
+	
+}
+#tabs-1{
+	padding: 20px;
+	padding-top:1px;
+	padding-bottom: 0;
+	
+}
+#tab_bars_1 li{
+	float: left;
+	padding: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background: white;
+	margin:1px;
+	margin-bottom: 0px;
+	text-align:center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+#tab_bars_1 li a{
+	text-decoration: none;
+	color: #706F6F;
+	font-weight: bold;
+}
+#tabs-tab-1-1{
+	background: white;
+	padding: 20px;
+	
+}
+#menu_list_table{
+	background: #EAEAEA;
+	text-align: center;
+	padding:1px;
+	border-spacing: 0px;
+	
+}
+#menu_list_table tr,td{
+	padding:5px;
+	padding-right:10px;
+	padding-left:10px;
+	margin:0px;
+	border-top: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+}
+#menu_list_table #menu_category{
+	font-weight: bold;
+	
+	font-size: 10pt;
+	color: #7C7C7C;
+}
+#menu_list_table #menu_name{
+	background: white;
+	font-size: 9pt;
+	color: #7C7C7C;
+	
+}#menu_list_table #menu_name1{
+	background: white;
+		border-left: 1px solid #D8D8D8;
+	
+}
+#buttons{
+	
+	width:70px;
+	margin:5px;
+	background: #706F6F;
+	border-radius: 5px;
+	color:white;
+	border : 0px;
+	padding:5px;
+	text-align: center;
+}
+#menu_right_button{
+	float:right;
+	width:100%;
+	right:0px;
+}
+#search_btn{
+	height: 33px;
+	width:31px;
+	background: #D8D8D8;
+	border: 1px solid #D8D8D8;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#inputs{
+	height: 29px;
+	background:white;
+	border: 1px solid #D8D8D8;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+#search_pack{
+	
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#menu_big_title{
+	font-size: 15pt;
+	font-weight: bold;	
+}
+#menu_big_title #totals{
+	font-size: 12pt;	
+	font-weight: bold;
+}
+#menu_big_title #big_name{
+	font-size : 20pt;
+}

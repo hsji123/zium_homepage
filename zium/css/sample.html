@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery를 이용한 탭메뉴 sample</title>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<style>
+	body{margin:0; padding:0}
+	#tab_wrap{width:100%; height:200px}
+	#tab_area{margin:0 auto; width:408px}
+	li{list-style:none; border:1px solid #666; width:100px; height:55px; line-height:55px; background:#D6D6D6; float:left; text-align:center}
+	li:hover{background:#545454; font-weight:bold}
+	a:link{color:#333}
+	a:hover{color:#fff}
+</style>
+
+<script type="text/javascript">
+function tab_menu(num){	
+	var f = $('#tab_area').find('a > li');
+	for ( var i = 0; i < f.length; i++ ) {			
+		if ( i == num) {			
+			f.eq(i).addClass('selected');	
+			$('.menu_tab0' + i ).show();
+		} else {
+			f.eq(i).removeClass('selected');					
+			$('.menu_tab0' + i ).hide();
+		}
+	}
+}
+</script>
+
+</head>
+
+<body>
+<div id="tab_wrap">
+	<div id="tab_area">
+		<a href="#" onclick="tab_menu(0)"><li>tab001</li></a>
+		<a href="#" onclick="tab_menu(1)"><li>tab002</li></a>
+		<a href="#" onclick="tab_menu(2)"><li>tab003</li></a>
+		<a href="#" onclick="tab_menu(3)"><li>tab004</li></a>
+	</div>
+</div>
+<!--여기는 내용이 나오는 부분입니다. -->
+<div class="menu_tab00"> 
+	tab content 001
+</div>
+<div class="menu_tab01" style="display:none"> 
+	tab content 002
+</div>
+<div class="menu_tab02" style="display:none"> 
+	tab content 003
+</div>
+<div class="menu_tab03" style="display:none"> 
+	tab content 004
+</div>
+</body>
+</html>

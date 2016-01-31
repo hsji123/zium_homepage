@@ -1,0 +1,693 @@
+﻿@CHARSET "UTF-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+@font-face{
+	font-family : 'hanna';
+	src: url(/test/fonts/BMHANNA_11yrs.ttf) format('truetype');
+}
+
+body {
+	font-family : 'Nanum Gothic';
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#head_line {
+	width: 100%;
+	height:48px;
+	background-color: #FD7E13;
+	color: white;
+	padding : 8px 0 20px 0;
+	font-family : "hanna";
+	font-weight:100;
+	font-size: 30px;
+}
+
+#coupon_img {
+	height: 250px;
+	width: 96%;
+}
+
+
+
+#hide_button {
+	visibility: hidden;
+}
+
+/* 硫붾돱 怨좊???CSS*/
+#menu_scroll {
+	width: 90%;
+	color: white;
+	background-color: #3A3E39;
+	overflow: hidden;
+}
+
+#menu_scroll td {
+	border-bottom: 1px inset #000;
+	height:40px;
+	padding-left: 5%;
+	padding-right: 5%;
+	
+}
+
+#menu_scroll tr:hover {
+	padding: 4%;
+	background-color: #FD7E13;
+}
+
+#menu_name{
+	float: left;
+}
+#menu_price{
+	float: right;
+}
+
+#eval {
+	margin-left: 3%;
+	margin-right: 3%;
+}
+/*?됯??좊븣 CSS*/
+img.tab_icon {
+	width: 24px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.tab_menu_sel {
+	color: white;
+	background-color: #3A3E39;
+	margin: 0;
+}
+
+#tab_menu_eval {
+	color: white;
+	background-color: #565453;
+}
+
+#tab_menu_point {
+	
+}
+
+#tab_menu_comment {
+	text-align: left;
+	padding-left: 7%;
+}
+
+#tab_menu_comment_info {
+	width: 90%;
+	height: 60px;
+	overflow-y: scroll;
+	resize: none;
+	border-radius: 5px;
+	border: 4px solid #7F7F7F;
+}
+
+#top_line {
+	margin: 0;
+	height: 20px;
+	background-color: #EA5514;
+}
+
+#menu_benefit {
+	margin-left: 10%;
+	margin-top: 3%;
+	width: 80%;
+	background-color: white;
+	border: 5px solid #DDD9C3;
+}
+
+#menu_benefit:hover {
+	background-color: #EA5514;
+}
+
+#menu_benefit_contents {
+	width: 100%;
+	/*color: white;*/
+	font-size: 80%;
+	text-align: left;
+}
+
+#benefit_tab_img {
+	vertical-align: bottom;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	border-radius: 5px;
+}
+
+#benefit_tab_img_detail {
+	width: 95%;
+	height: 200px;
+	margin-bottom: 4%;
+}
+
+#benefit_tab_detail {
+	width: 100%;
+	height: auto;
+	padding: 25px 0px;
+	background-color: #EFEFEF;
+}
+
+/*留덉?留??섏씠吏*/
+#reward {
+	height: 2%;
+	width: 50%;
+	margin-top: 5%;
+	background-color: #EA5514;
+}
+#reward_img {
+	height: 45%;
+	width: 80%;
+}
+
+#top_progress_ex {
+	font-size:10pt;
+	color: gray;
+	float: right;
+	padding-right: 5%;
+	margin: 1% 0 3% 0;
+}
+/* This button was generated using CSSButtonGenerator.com */
+.mail_ul {
+	text-align: left;
+	font-size: 10pt;
+}
+
+#email_id {
+	padding: 5px;
+	width: 40%;
+	margin: 1%;
+	border-radius: 5px;
+	height: 30px;
+	border: 3px solid #595757;
+	background-color: #F7F8F8;
+}
+
+#email_id:FOCUS {
+	padding: 5px;
+	border: 3px solid #EA5514;
+	box-shadow: 0;
+}
+
+#select_mail {
+	width: 40%;
+	margin: 1%;
+	height: 50px;
+	background-color: #595757;
+	color: white;
+	border-radius: 5px;
+}
+
+#e:FOCUS {
+	background-color: #EA5514;
+}
+
+#id_btn {
+	float: right;
+	margin-right: 3%;
+}
+
+#button {
+	border-radius: 5px;
+	background: #C5C5C6;
+}
+
+.category {
+	display: none;
+}
+
+#menu_category {
+	width: 90%;
+	border-spacing: 0;
+}
+
+#menu_category td {
+	background: #E1E0DF;
+	height: 30px;
+	text-align: center;
+}
+
+#menu_div_full {
+	width: 100%;
+	height: 100%;
+	line-height: 2.5;
+}
+
+#menu_div_top {
+	background-color: #b4b4b5;
+	height: 3px;
+	width: 100%;
+	position: static;
+	top: 0;
+	color: #3e3a39;
+}
+
+#menu-name {
+	font-size: 13pt;
+	font-weight: bold;
+	
+ <!--	padding-top: 7%; -->
+}
+
+#sub-title {
+	float: left;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#sub-title-con {
+	float: left;
+	font-size: 10pt;
+	margin: 20px 10px 10px 0px;
+}
+#sub-title-con a{
+	font-size : 15pt;
+	color : #EA5514;
+	font-weight : bold;
+}
+
+#menu_raty {
+	height: 50px;
+	width: 100%;
+	padding-top: 15px;
+	background-color: #3e3a39;
+	display: inline-table;
+}
+
+#star-txt {
+	font-size: 9pt;
+	padding: 5px 1px;
+}
+
+#menu-disc {
+	width: 100%;
+	height: 20px;
+	background-color: white;
+	border: 3px solid gray;
+	border-radius: 5px;
+	resize: none;
+	wrap: hard;
+}
+
+#menu-ul {
+	padding-left: 2px;
+}
+
+#menu_table {
+	padding: 10px;
+	width: 96%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	margin: auto;
+}
+
+#menu_table td {
+	padding: 0px 5px 5px 5px;
+}
+
+#menu_table input {
+	font-size: 10pt;
+	background-color: #B5B5B6;
+	margin: 2%;
+	padding: 3%;
+	border-radius: 5px;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#menu_div_tops {
+	background-color: #E1E0DF;
+	height: 30px;
+	width: 100%;
+	position: static;
+	top: 0;
+	color: #3e3a39;
+	padding-top: 5px;
+	text-align: left;
+}
+
+#ontop {
+	background-color: #B4B4B5;
+	height: 5px;
+	width: 100%;
+	position: static;
+	top: 0;
+	color: #3e3a39;
+}
+
+
+#titles {
+	font-size: 13pt;
+	font-weight: bold;
+	/*color: white;*/
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+#menu_select{
+	width: 100%; height: 225px; overflow: auto;
+}
+
+#menu_select option:HOVER {
+	background-color: #EA5514;
+}
+#menu_tabs-2 #top_title{
+	padding:10px;
+	padding-top:15px;
+	/*margin-left:10%;*/
+	text-align: left;
+}
+
+
+#dani {
+	width: 96%; 
+	height: 340px;
+}
+/***********************************************************************/
+/*user_info.php*/
+#sex_table{
+	width : 80%;
+	margin : 0 auto 0 auto;
+	font-family: 'hanna';
+}
+#sex_table tr td{
+	width:50%;
+}
+#sex_radio_button{
+	width: 60%;
+	height:100%;
+	margin: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	background-color: #A6A6A6;
+	border-radius: 15px;
+	border: 1px solid #D0D0D0;
+	overflow: auto;
+}
+#sex_radio_button label {
+	width: 100%;
+}
+
+#sex_radio_button label span {
+	text-align: center;
+	padding: 30% 0 12% 0px;
+	display: block;
+	color:white;
+	height:100%;
+	font-size: 16pt;
+}
+
+#sex_radio_button label input {
+	position: absolute;
+	top: -20px;
+}
+
+#sex_radio_button input:checked+span {
+	background-color: #FD7E13;
+	color: white;
+}
+#top_title{
+	padding:3% 5%;
+	text-align: left;
+}
+#top_title a{
+	color : #FD7E13;
+	font-weight:bolder;
+}
+
+#user_table{
+	width:100%;
+	margin-bottom:10px;
+	font-family: 'hanna';
+}
+#user_table tr td{
+	width:33%;
+}
+#user_radio_button {
+	width: 90%;
+	/*margin: 4px;*/
+	margin-left: 5%;
+	/*margin-bottom: 5%;*/
+	background-color: #A6A6A6;
+	border-radius: 10px;
+	border: 1px solid #D0D0D0;
+	overflow:auto;
+}
+
+#user_radio_button label {
+	width: 100%;
+}
+
+#user_radio_button label span {
+	text-align: center;
+	padding: 10px 0px;
+	display: block;
+	color:white;
+	font-size:14pt;
+}
+
+#user_radio_button label input {
+	position: absolute;
+	top: -20px;
+}
+
+#user_radio_button input:checked+span {
+	background-color: #fd7e13;
+	color: #fff;
+}
+#frequency_table{
+	width : 80%;
+	margin : 0 auto 0 auto;
+	font-family: 'hanna';
+}
+#frequency_table tr td{
+	width:50%;
+}
+#frequency_radio_button{
+	width: 80%;
+	height:70%;
+	margin: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	background-color: #A6A6A6;
+	border-radius: 15px;
+	border: 1px solid #D0D0D0;
+	overflow:auto;
+}
+#frequency_radio_button label {
+	width: 100%;
+}
+
+#frequency_radio_button label span {
+	text-align: center;
+	padding: 20% 0 40% 0px;
+	display: block;
+	color:white;
+	height:100%;
+	font-size: 16pt;
+}
+
+#frequency_radio_button label input {
+	position: absolute;
+	top: -20px;
+}
+
+#frequency_radio_button input:checked+span {
+	background-color: #FD7E13;
+	color: white;
+}
+/* survey_howto.php */
+#howto_table{
+	width:100%;
+	margin-bottom:10px;
+}
+#howto_table tr td {
+	width : 50%;
+}
+/********************/
+/* 숫자? */
+pg{
+	font-size:24px;
+}
+/*페이지 넘기기, 뒤로가기 버튼, 첫 페이지 버튼*/
+.pass_button{
+	background-color : #686868;
+	color : white;
+	padding : 12px;
+	margin : 0 5px 0 5px;
+	width : 45%;
+	border : 0px;
+}
+.pass_button:active{
+	background-color: #FD7E13;
+}
+.pass_button:disabled{
+	background-color : gray;
+}
+#start_button{
+	background-color : #686868;
+	color : white;
+	padding : 12px;
+	margin : 0 5px 0 5px;
+	width : 90%;
+	border : 0px;
+}
+#start_button:active{
+	background-color: #FD7E13;
+}
+
+/*질문들 radio 버튼*/
+div label input {
+	margin-right: 100px;
+}
+
+#check_radio_button {
+	width: 90%;
+	/*margin: 4px;*/
+	margin-left: 5%;
+	/*margin-bottom: 5%;*/
+	background-color: #B5B5B6;
+	overflow: auto;
+}
+
+#check_radio_button label {
+	width: 100%;
+}
+
+#check_radio_button label span {
+	text-align: center;
+	padding: 11px 0px;
+	display: block;
+}
+
+#check_radio_button label input {
+	position: absolute;
+	top: -20px;
+}
+
+#check_radio_button input:checked+span {
+	background-color: #fd7e13;
+	color: #fff;
+}
+/* survey_eval.php*/
+#kindness, #freshness {
+	background-color: #3E3A39;
+	padding : 3%;
+	margin-left:10%;
+}
+
+#star_table {
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	margin: auto;
+	margin-bottom:10px;
+}
+/*******************/
+
+/* survey_comment.php*/
+#star_disc{
+	background-color : #F6F8F7;
+	width : 90%;
+	height :75px;
+	border-radius : 5px;
+	border : 2px solid #9EA09F;
+}
+#disc_comment{
+	font-size : 10pt;
+	margin : 10px 0;
+}
+/* survey_form.php*/
+#icon_img{
+	float:left;
+	padding-bottom:5px;
+	background-color:white;
+	height:36px;
+}
+#temp_table{
+	margin : 0 auto 10px auto;
+	margin-left:27%;
+}
+#temp_table tr td{
+	width:50%;
+}
+#mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	background-color: #000000;
+	display: none;
+}
+
+.layerpop {
+	display: none;
+	z-index: 1000;
+	background: #fff;
+	cursor: move;
+}
+
+.layerpop_area .title {
+	padding: 10px 10px 10px 10px;
+	border: 0px solid #aaaaaa;
+	background-color: #FD7E13;
+	color: white;
+	font-family:'hanna';
+	font-size: 16pt;
+	line-height: 24px;
+}
+
+.layerpop_area .layerpop_close {
+	width: 25px;
+	height: 25px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: transparent url('btn_exit_off.png') no-repeat;
+}
+
+.layerpop_area .layerpop_close:hover {
+	background: transparent url('btn_exit_on.png') no-repeat;
+	cursor: pointer;
+}
+
+.layerpop_area .content {
+	width: 96%;	
+	margin: 2%;
+	color: #828282;
+}
+
+#info_prov{
+	font-size:10pt;
+	text-align:left;
+	margin : 10px 20px 0 20px;
+}
+#phone_num{
+	width:84%;
+	margin : 2% 5%;
+	padding:3%;
+	border:2px solid #838383;
+}
+/*survey_reward.php*/
+#reward_comment{
+	color : #FD7E13;
+	font-family: 'hanna';
+	font-weight:100;
+	font-size:16pt;
+	margin:5% 0;
+}
+#information{
+	padding :0 5%;
+	margin : 0 5%;
+}
